@@ -1,0 +1,6 @@
+{
+  "name": "clock-demo",
+  "paths": ["./lib"],
+  "local": ["clock"],
+  "scripts": ["index.js"]
+}
