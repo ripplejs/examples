@@ -4,8 +4,8 @@
   "scripts": ["index.js"],
   "templates": ["index.html"],
   "dependencies": {
-    "ripplejs/ripple": "*",
-    "ripplejs/each": "*",
+    "ripplejs/ripple": "0.0.4",
+    "ripplejs/each": "0.0.3",
     "anthonyshort/date-suffix": "*",
     "anthonyshort/date-month": "*",
     "anthonyshort/date-day": "*"

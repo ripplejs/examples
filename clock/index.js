@@ -5,9 +5,9 @@ var clock = new Clock({
 });
 
 // Append the view element to another element
-clock.mount(document.body.firstElementChild);
+clock.mount(document.body.firstElementChild, true);
 
 // Update the date every second
 setInterval(function(){
-  clock.set('now', new Date())
+  clock.set('now', new Date());
 }, 1000);

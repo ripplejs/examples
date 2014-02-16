@@ -5,21 +5,8 @@ var month = require('date-month');
 var ripple = require('ripple');
 var each = require('each');
 
-var Clock = ripple()
-  .use(each)
-  .compile(template);
-
-Clock.on('construct', function(clock){
-
-  clock.set('minor', Array(12).map(function(val, index){
-    return  360 * index / 12;
-  }));
-
-  clock.set('major', Array(60).map(function(val, index){
-    return  360 * index / 60;
-  }));
-
-});
+var Clock = ripple(template)
+  .use(each);
 
 Clock.filter('date', function(val){
   return suffix(val);
@@ -36,5 +23,14 @@ Clock.filter('day', function(val){
 Clock.filter('pad', function (num){
   return ( num < 10 ? '0' + num : num );
 });
+
+Clock.prototype.init = function(){
+  this.set('minor', Array(12).map(function(val, index){
+    return  360 * index / 12;
+  }));
+  this.set('major', Array(60).map(function(val, index){
+    return  360 * index / 60;
+  }));
+};
 
 module.exports = Clock;
