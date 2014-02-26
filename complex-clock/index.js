@@ -1,28 +1,21 @@
+var Clock = require('clock');
 var ripple = require('ripple');
-var each = require('each');
-var dateFilters = require('date-filters');
-var numberFilters = require('number-filters');
-
+var ClockDetails = require('clock-details');
 var pageEl = document.body.firstElementChild;
 
-// Create a view using the pages HTML as a template
-var Page = ripple(pageEl.outerHTML)
-  .use(dateFilters)
-  .use(numberFilters);
+var Page = ripple(pageEl.outerHTML);
+
+// Compose the sub-views
+Page
+  .component('clock', Clock)
+  .component('clockdetails', ClockDetails);
 
 // Hook for when the view is created. This fires
-// before the view is rendered
+// before the view is rendered so we can set some
+// default properties on the view too.
 Page.on('created', function(){
   this.interval = setInterval(this.tick.bind(this), 1000);
   this.tick();
-
-  this.set('minor', Array(12).map(function(val, index){
-    return  360 * index / 12;
-  }));
-
-  this.set('major', Array(60).map(function(val, index){
-    return  360 * index / 60;
-  }));
 });
 
 // Clean up when we destroy the view
@@ -33,7 +26,7 @@ Page.on('destroy', function(){
 // Every second this will get called and
 // update the current time
 Page.prototype.tick = function(){
-  this.set('time', new Date());
+  this.set('now', new Date());
 };
 
 // Create a new page and replace

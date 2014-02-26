@@ -1,0 +1,13 @@
+{
+  "name": "clock-details",
+  "styles": ["index.css"],
+  "scripts": ["index.js"],
+  "templates": ["index.html"],
+  "local": [
+    "date-filters",
+    "number-filters"
+  ],
+  "dependencies": {
+    "ripplejs/ripple": "*"
+  }
+}

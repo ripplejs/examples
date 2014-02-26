@@ -1,0 +1,10 @@
+<div class="ClockDetails">
+  <p>
+    Today is {{ now | fullDay }} the {{ now | suffixedDate }} of {{ now | fullMonth }}. The time is:
+  </p>
+  <span class='time'>
+    <span class='hours'>{{ now.getHours() | pad }}</span>:
+    <span class='minutes'>{{ now.getMinutes() | pad }}</span>:
+    <span class='seconds'>{{ now.getSeconds() | pad }}</span>
+  </span>
+</div>

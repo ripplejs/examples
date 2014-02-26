@@ -1,11 +1,7 @@
 {
-  "name": "clock",
-  "styles": ["index.css"],
+  "name": "date-filters",
   "scripts": ["index.js"],
-  "templates": ["index.html"],
   "dependencies": {
-    "ripplejs/ripple": "0.0.4",
-    "ripplejs/each": "0.0.3",
     "anthonyshort/date-suffix": "*",
     "anthonyshort/date-month": "*",
     "anthonyshort/date-day": "*"

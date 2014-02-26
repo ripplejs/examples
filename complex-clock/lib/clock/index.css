@@ -1,0 +1,44 @@
+.Clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding-bottom: 100%;
+}
+
+.Clock svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.Clock-face {
+  stroke: #333;
+  fill: white;
+}
+
+.Clock-minor {
+  stroke: #999;
+  stroke-width: 0.5;
+}
+
+.Clock-major {
+  stroke: #333;
+  stroke-width: 1;
+}
+
+.Clock-hour {
+  stroke: #333;
+}
+
+.Clock-minute {
+  stroke: #666;
+}
+
+.Clock-second,
+.Clock-secondCounterweight {
+  stroke: rgb(180,0,0);
+}
+
+.Clock-secondCounterweight {
+  stroke-width: 3;
+}

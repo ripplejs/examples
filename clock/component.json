@@ -1,6 +1,9 @@
 {
-  "name": "clock-demo",
+  "name": "example",
   "paths": ["./lib"],
   "local": ["clock"],
-  "scripts": ["index.js"]
+  "scripts": ["index.js"],
+  "dependencies": {
+    "ripplejs/ripple": "*"
+  }
 }
